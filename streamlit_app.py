@@ -74,11 +74,7 @@ with st.sidebar:
     st.caption(f"Target: **{target}** · Features: **{len(features)}** · Classes: **{len(classes)}**")
     with open("test_data.csv", "rb") as f:
         st.download_button("⬇️ Download sample test CSV", f, "test_data.csv", "text/csv")
-    st.divider()
-    st.caption(f"Dataset: {meta['dataset']}  \n"
-               f"Models trained once in `train_models.ipynb` (scikit-learn {meta['sklearn_version']}) "
-               "and loaded from `model/` — nothing is retrained here.")
-
+    
 if up is not None:
     df = pd.read_csv(up)
 elif use_sample:
